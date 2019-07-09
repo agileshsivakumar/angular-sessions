@@ -1,0 +1,18 @@
+<table *ngIf="employees" class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th *ngFor="let employeeKey of employeeKeys">
+        {{ employeeKey }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <th *ngFor="let employeeKey of employeeKeys">
+        {{ employee[employeeKey] }}
+      </th>
+    </tr>
+  </tbody>
+</table>
